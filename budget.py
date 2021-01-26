@@ -31,7 +31,7 @@ class Category:
 
     def get_balance(self):
         """Returns present balance based on deposits and withdrawals."""
-        return sum([list(transaction.values())[0] for transaction in self.ledger])
+        return sum([transaction['amount'] for transaction in self.ledger])
 
     def check_funds(self, amount):
         """Checks if the amount is greater than the present balance."""
